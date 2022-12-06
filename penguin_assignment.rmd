@@ -75,7 +75,7 @@ plot(model1)
 anova(model1)
 
 ```
-### creating figure
+### creating the figure
 ```{R, Chunk9}
 
 png("figures/fig01_report.png")

@@ -1,0 +1,79 @@
+---
+title: "palmerpenguins"
+
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{R, Chunk 1}
+library(palmerpenguins)
+library(ggplot2)
+suppressPackageStartupMessages(library(janitor))
+suppressPackageStartupMessages(library(dplyr))
+library(tidyr)
+library(ragg)
+library(svglite)
+```
+
+```{R, Chunk 2}
+cleaning <- function(data_raw){
+  data_raw %>%
+    clean_names() %>%
+    remove_empty(c("rows", "cols")) %>%
+    select(-starts_with("delta")) %>%
+    select(-comments)
+}
+
+
+remove_empty_flipper_length <- function(data_clean){
+  data_clean %>%
+    filter(!is.na(flipper_length_mm)) %>%
+    select(species, flipper_length_mm)
+}
+
+```
+
+
+```{R, Chunk 3}
+summary(penguins)
+
+```
+```{R, Chunk 4}
+head(penguins)
+
+```
+```{R, Chunk 5}
+
+model1 <- lm(body_mass_g ~ flipper_length_mm, penguins)
+
+```
+
+```{R, Chunk 6}
+
+summary(model1)
+
+```
+```{R, Chunk 7}
+plot(model1)
+
+```
+```{R, Chunk 8}
+
+anova(model1)
+
+```
+```{R, Chunk9}
+
+png("figures/fig01_report.png")
+ggplot(data= penguins, aes(x= body_mass_g, y=flipper_length_mm))+
+  geom_point()+
+  geom_smooth(method = "lm", se= FALSE)+ 
+  labs( title= "regression for body mass and flipper length",
+        x= "Body mass",
+        y= "Flipper length")
+dev.off()
+
+```

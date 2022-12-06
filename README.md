@@ -1,4 +1,5 @@
 # penguin project - reproducibility
-This GitHub repository contains the code provided for penguin_assignment with the 
-fig01_report.png attached from the code and 
-data_clean and data_raw attached and a statistical test
+A linear regression model between body mass and flipper length
+This GitHub repository contains the code provided for penguin_assignment.rmd.
+The fig01_report.png is attached 
+The data sets data_clean and data_raw are also  attached 

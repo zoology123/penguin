@@ -7,7 +7,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
+### library
 ```{R, Chunk 1}
 library(palmerpenguins)
 library(ggplot2)
@@ -17,6 +17,7 @@ library(tidyr)
 library(ragg)
 library(svglite)
 ```
+### cleaning function
 
 ```{R, Chunk 2}
 cleaning <- function(data_raw){
@@ -37,6 +38,7 @@ remove_empty_flipper_length <- function(data_clean){
 ```
 
 
+
 ```{R, Chunk 3}
 penguins_clean<- cleaning(penguins_raw)
 write.csv(penguins_raw, "data_raw/penguins_raw.csv")
@@ -49,6 +51,8 @@ summary(penguins_flipper)
 head(penguins_flipper)
 
 ```
+
+### creating linear model
 ```{R, Chunk 5}
 
 model1 <- lm(body_mass_g ~ flipper_length_mm, penguins_flipper)
@@ -64,11 +68,14 @@ summary(model1)
 plot(model1)
 
 ```
+
+### statistical test
 ```{R, Chunk 8}
 
 anova(model1)
 
 ```
+### creating figure
 ```{R, Chunk9}
 
 png("figures/fig01_report.png")

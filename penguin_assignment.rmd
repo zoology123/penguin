@@ -47,6 +47,7 @@ summary(penguins_flipper)
 
 
 ```
+
 ```{R, Chunk 4}
 head(penguins_flipper)
 
@@ -64,6 +65,7 @@ model1 <- lm(body_mass_g ~ flipper_length_mm, penguins_flipper)
 summary(model1)
 
 ```
+
 ```{R, Chunk 7}
 plot(model1)
 

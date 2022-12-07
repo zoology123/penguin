@@ -40,8 +40,9 @@ remove_empty_flipper_length <- function(data_clean){
 
 
 ```{R, Chunk 3}
-penguins_clean<- cleaning(penguins_raw)
 write.csv(penguins_raw, "data_raw/penguins_raw.csv")
+penguins_clean<- cleaning(penguins_raw)
+write.csv(penguins_clean, "data_clean/penguins_clean.csv")
 penguins_flipper<- remove_empty_flipper_length(penguins_clean)
 summary(penguins_flipper)
 

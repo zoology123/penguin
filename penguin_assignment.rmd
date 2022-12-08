@@ -80,6 +80,7 @@ anova(model1)
 ```
 ### creating the figure
 ```{R, Chunk9}
+
 agg_png("figures/fig01_report.png", 
         width = 15, height = 15, units = "cm", res = 600, scaling = 1.4) 
         

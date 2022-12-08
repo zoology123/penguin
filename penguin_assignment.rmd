@@ -84,12 +84,12 @@ anova(model1)
 agg_png("figures/fig01_report.png", 
         width = 15, height = 15, units = "cm", res = 600, scaling = 1.4) 
         
-ggplot(data= penguins_flipper, aes(x= body_mass_g, y=flipper_length_mm))+
+ggplot(data= penguins_flipper, aes(x=flipper_length_mm, y=body_mass_g))+
   geom_point()+
   geom_smooth(method = "lm", se= FALSE)+ 
   labs( title= "linear regression for body mass and flipper length",
-        x= "Body mass g",
-        y= "Flipper length mm")
+        x= "Flipper Length mm",
+        y= "Body mass g")
 dev.off()
 
 ```

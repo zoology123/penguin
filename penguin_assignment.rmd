@@ -89,7 +89,7 @@ ggplot(data= penguins_flipper, aes(x=flipper_length_mm, y=body_mass_g))+
   geom_smooth(method = "lm", se= FALSE)+ 
   labs( title= "linear regression for body mass and flipper length",
         x= "Flipper Length mm",
-        y= "Body mass g")
+        y= "Body Mass g")
 dev.off()
 
 ```
